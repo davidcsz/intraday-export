@@ -2,7 +2,11 @@
 var url = window.location.toString();
 var access_token;
 var date = new Date();
-var today = formatDate(date.getFullYear(), (date.getMonth() + 1), date.getDate());
+var today = formatDate(
+    date.getFullYear(),
+    (date.getMonth() + 1),
+    date.getDate()
+);
 
 if(url.indexOf('#') === -1) {
     // Send user through auth
@@ -25,6 +29,7 @@ if(url.indexOf('#') === -1) {
         var type = response.headers.get('Content-Type');
 
         if(type && type.indexOf('application/json') !== -1) {
+            console.log(typeof(response));
             return response.json();
         } else {
             throw new Error('Didn\'t receive JSON... ' + response);
@@ -32,6 +37,8 @@ if(url.indexOf('#') === -1) {
         }
     }).then(function(json) {
         //console.log('JSON received...' + JSON.stringify(json));
+        console.log(typeof(response));
+        console.log(typeof(JSON.stringify(json)));
         window.alert('Steps: ' + JSON.stringify(json));
     });
 
@@ -50,6 +57,7 @@ if(url.indexOf('#') === -1) {
         var type = response.headers.get('Content-Type');
 
         if(type && type.indexOf('application/json') !== -1) {
+            console.log(typeof(response));
             return response.json();
         } else {
             throw new Error('Didn\'t receive JSON... ' + response);
@@ -57,6 +65,8 @@ if(url.indexOf('#') === -1) {
         }
     }).then(function(json) {
         //console.log('JSON received...' + JSON.stringify(json));
+        console.log(typeof(json));
+        console.log(typeof(JSON.stringify(json)));
         window.alert('HR: ' + JSON.stringify(json));
     });
 }
