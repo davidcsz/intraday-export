@@ -1,20 +1,23 @@
 {
   "name": "intraday-export",
   "version": "1.0.0",
-  "description": "Displays and exports Fitbit intraday data.",
+  "description": "",
   "main": "app.js",
-  "dependencies": {
-    "http-server": "^0.9.0"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "start"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/dczanches/intraday-export.git"
+    "url": "git+https://github.com/squlnt/intraday-export.git"
   },
   "author": "David Sanchez",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/dczanches/intraday-export#readme"
+  "bugs": {
+    "url": "https://github.com/squlnt/intraday-export/issues"
+  },
+  "homepage": "https://github.com/squlnt/intraday-export#readme",
+  "dependencies": {
+    "node-fetch": "^1.6.3",
+    "openurl": "^1.1.1"
+  }
 }
